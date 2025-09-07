@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+import Counter from "./Components/Counter";
 
 function App() {
   const [count, setCount] = useState(0);
+
   const onIncrement = () => {
     count < 10 ? setCount((prev) => prev + 1) : alert("Maximum count is 10");
   };
@@ -13,10 +15,7 @@ function App() {
   return (
     <>
       <h3> Counter App</h3>
-      <h1>{count}</h1>
-      <button onClick={onIncrement}>Up </button>
-      &nbsp;&nbsp;&nbsp;
-      <button onClick={onDecrement}>Down</button>
+      <Counter count={count} onIncrement={onIncrement} onDecrement={onDecrement}/>
     </>
   );
 }
